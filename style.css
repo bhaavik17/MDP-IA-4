@@ -1,0 +1,330 @@
+/* --- General Styles --- */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* --- Hero Section --- */
+.hero {
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  margin-top: 0; /* good — removes gap under header */
+}
+
+.slider img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content button {
+  padding: 12px 25px;
+  background: rgb(0, 0, 0);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-content button:hover {
+  background: rgb(157, 157, 157);
+}
+
+/* --- Sections --- */
+section {
+  padding: 50px 20px;
+}
+
+/* --- Best Sellers & Products --- */
+.bestseller-grid, .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bestseller-card, .product-card {
+  background: #f5f5f5;
+  padding: 15px;
+  flex: 1 1 calc(33% - 40px);
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.bestseller-card img, .product-card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Popup hover effect */
+.bestseller-card:hover, .product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* --- Buttons Styling --- */
+.add-to-cart,
+.cart-item .cart-controls button,
+.cart-total button {
+  background: #000; /* black */
+  color: #fff;      /* white text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover,
+.cart-item .cart-controls button:hover,
+.cart-total button:hover {
+  background: #222; /* slightly lighter black on hover */
+}
+
+/* --- Cart Sidebar --- */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  transition: right 0.3s ease-in-out;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+#cart-items {
+  flex: 1;
+  overflow-y: auto; /* scroll items if too many */
+  margin-bottom: 10px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-header button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cart-item .cart-controls button {
+  margin: 0 2px;
+}
+
+.cart-total {
+  text-align: center;
+  flex-shrink: 0;
+  background: #222;
+  color: #fff;
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+
+/* --- Overlay --- */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1500;
+}
+
+.cart-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* --- Footer Styling --- */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer .social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+footer .social-icons img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .bestseller-card, .product-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .bestseller-card, .product-card {
+    flex: 1 1 100%;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+}
+/* --- Cart Items Layout Fix --- */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* ensures everything stays vertically centered */
+  margin: 10px 0;
+}
+
+.cart-item span {
+  flex: 1; /* product name and price take remaining space */
+}
+
+.cart-item .cart-controls {
+  display: flex;
+  gap: 5px; /* space between buttons */
+  align-items: center; /* vertically center quantity and buttons */
+}
+footer .social-x {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;   /* white background like other icons */
+  color: #000;              /* black text */
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  line-height: 25px;        /* center the X vertically */
+  border-radius: 50%;
+  text-decoration: none;
+}
+/* ===== Center Testimonials Section ===== */
+.testimonials {
+  text-align: center;  /* center the section heading and text */
+  padding: 60px 20px;
+}
+
+.testimonials .testimonial {
+  margin: 0 auto 20px;  /* center each testimonial box */
+  max-width: 600px;     /* optional: limit width for readability */
+}
+
+/* ===== Center Privacy Policy Section ===== */
+.privacy {
+  text-align: center;   /* center the heading and text */
+  padding: 60px 20px;
+  max-width: 800px;     /* optional: limit width */
+  margin: 0 auto;       /* center horizontally */
+}
+/* ===== Testimonials Text Styling ===== */
+.testimonials h2 {
+  font-size: 2.2rem; /* bigger heading */
+  margin-bottom: 20px;
+}
+
+.testimonials p {
+  font-size: 1.2rem; /* larger testimonial text */
+  line-height: 1.6;
+}
+
+/* ===== Privacy Policy Text Styling ===== */
+.privacy h2 {
+  font-size: 2.2rem; /* bigger heading */
+  margin-bottom: 20px;
+}
+
+.privacy p {
+  font-size: 1.1rem; /* slightly larger text for readability */
+  line-height: 1.6;
+}
