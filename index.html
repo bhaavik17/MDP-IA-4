@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SportX Wear - Premium Sportswear</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">SportX Wear</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#bestsellers">Best Sellers</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#" id="cart-toggle">🛒 (<span id="cart-count">0</span>)</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="home.html#contact">Contact</a></li>
+        <li><a href="#privacy">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Rotating Images -->
+  <section id="home" class="hero">
+    <div class="slider">
+      <img src="images/image4.jpg" class="slide active" alt="Sports Banner 1">
+      <img src="images/image3.jpg" class="slide" alt="Sports Banner 2">
+      <img src="images/image1.jpg" class="slide" alt="Sports Banner 3">
+      <img src="images/image6.jpg" class="slide" alt="Sports Banner 4">
+      <img src="images/image2.jpg" class="slide" alt="Sports Banner 4">
+      <img src="images/image7.jpg" class="slide" alt="Sports Banner 6">
+    </div>
+    <div class="hero-content">
+      <h1>Welcome to SportX Wear</h1>
+      <p>Premium sportswear designed for performance, comfort, and style.</p>
+      <button onclick="scrollToSection('bestsellers')">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Best Sellers Section -->
+  <section id="bestsellers" class="bestsellers">
+    <h2>Best Sellers</h2>
+    <div class="bestseller-grid">
+      <div class="bestseller-card">
+        <img src="images/bestseller2.webp" alt="Best Seller 1">
+        <h3>ProFlex Training Jacket</h3>
+        <p>Lightweight, moisture-wicking, and built for endurance.</p>
+        <p class="price">₹1999</p>
+        <button class="add-to-cart" data-name="ProFlex Training Jacket" data-price="1999">Add to Cart</button>
+      </div>
+      <div class="bestseller-card">
+        <img src="images/bestseller1.jpg" alt="Best Seller 2">
+        <h3>AirRun Football Studs</h3>
+        <p>Durable studs built to last through every match and training session.</p>
+        <p class="price">₹2499</p>
+        <button class="add-to-cart" data-name="AirRun Football Studs" data-price="2499">Add to Cart</button>
+      </div>
+      <div class="bestseller-card">
+        <img src="images/bestseller3.jpg" alt="Best Seller 3">
+        <h3>Custom Jersey</h3>
+        <p>Personalize your jersey with your name and favorite number.</p>
+        <p class="price">₹1199</p>
+        <button class="add-to-cart" data-name="Custom Jersey" data-price="1199">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/product1.jpg" alt="Running Shoes"/>
+        <h3>Running Shoes</h3>
+        <p>Lightweight shoes designed for comfort and speed.</p>
+        <p class="price">₹2799</p>
+        <button class="add-to-cart" data-name="Running Shoes" data-price="2799">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product2.jpg" alt="Sports Jersey"/>
+        <h3>Sports Jersey</h3>
+        <p>Breathable and stylish jerseys for all your activities.</p>
+        <p class="price">₹1599</p>
+        <button class="add-to-cart" data-name="Sports Jersey" data-price="1599">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/product3.jpg" alt="Track Pants"/>
+        <h3>Track Pants</h3>
+        <p>Comfortable pants made for athletes and fitness lovers.</p>
+        <p class="price">₹999</p>
+        <button class="add-to-cart" data-name="Track Pants" data-price="999">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close">&times;</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-total">
+      <h3>Total: ₹<span id="cart-total">0</span></h3>
+      <button id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <p>"SportX Wear makes the best activewear! Super comfy and stylish."</p>
+      <span>- Alex, Runner</span>
+    </div>
+    <div class="testimonial">
+      <p>"I love their jerseys, perfect for my football training sessions."</p>
+      <span>- Harikrishna, Football Player</span>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy" class="privacy">
+    <h2>Privacy Policy</h2>
+    <p>At SportX Wear, we value your privacy. We only collect information necessary for processing orders and improving our services. We do not share your personal data with third parties.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://instagram.com"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram"></a>
+        <a href="https://x.com" target="_blank" rel="noopener" class="social-x">X</a>
+        <a href="https://facebook.com"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook"></a>
+      </div>
+      <p>&copy; 2025 SportX Wear. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
